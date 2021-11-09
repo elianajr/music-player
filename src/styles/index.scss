@@ -1,13 +1,112 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
-/* 
+#app {
+    margin:0px;
+    padding:0px;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+body {
+    margin: 0px;
+    padding:0px;
+    background: linear-gradient(174deg, rgba(2,0,36,1) 0%, rgba(36,103,152,1) 0%, rgba(20,1,20,1) 39%);
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
 
-*/
+img {
+    width: 110%;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+.container{
+    border: 5px white;
+    border-radius: 10px;
+    display: center;
+    margin-left:0px;
+    padding-left: 0px;
+    
+}
+
+.myList {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    line-height: 2;
+}
+
+audio {
+    display: none;
+}
+
+.tetrisImage {
+    width: 100%;
+}
+
+button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+.popular {
+    margin-top: 1rem;
+}
+
+.previous, .next {
+    color: white;
+    font-size: 1rem;
+}
+.previous:hover, .next:hover {
+    color: white;
+    font-size: 1.3rem;
+}
+
+.play, .pause {
+    color: white;
+    font-size: 2.5rem;
+}
+
+.play:hover, .pause:hover {
+    color: white;
+    font-size: 2.8rem;
+}
+
+.iconPlay {
+    color: rgb(54, 148, 54);
+    background-color: white;
+    border-radius: 100%;
+    font-size: 3.5rem;
+}
+
+.iconPlay:hover {
+    font-size:3.8rem;
+}
+
+.navbar {
+    background-color:rgb(24, 24, 24);
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    align-content: center;
+    bottom: 0; 
+    width: 100%;
+    border-top: 1px solid rgb(168, 168, 168);
+    
+}
+
+li:hover {
+    background: linear-gradient(174deg, rgba(2,0,36,1) 0%, rgba(36,103,152,1) 0%, rgba(20,1,20,1) 39%);
+    opacity: 0.5;
+    border-radius: 10px;
+}
+

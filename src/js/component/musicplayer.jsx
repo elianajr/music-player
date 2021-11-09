@@ -2,11 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Musicplayer = props => {
-	return <li>{props.name}</li>;
+	return (
+		<div>
+			<li onClick={() => props.select(props.song)}>{props.song.name}</li>
+		</div>
+	);
 };
 
 Musicplayer.propTypes = {
-	name: PropTypes.string
+	song: PropTypes.object,
+	select: PropTypes.func
 };
 
 export default Musicplayer;
