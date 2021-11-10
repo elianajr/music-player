@@ -51,7 +51,6 @@ const Home = () => {
 
 	const setSong = song => {
 		setCurrentSong(song);
-		console.log(currentSong);
 	};
 
 	const previousSong = () => {
@@ -61,7 +60,6 @@ const Home = () => {
 		} else {
 			setCurrentSong(sounds[currentIndex - 1]);
 		}
-		console.log(currentIndex);
 	};
 
 	const nextSong = () => {
@@ -71,23 +69,15 @@ const Home = () => {
 		} else {
 			setCurrentSong(sounds[currentIndex + 1]);
 		}
-		console.log(currentIndex);
 	};
 
-	// const randomSong = () => {
-	// 	let currentIndex = sounds.indexOf(currentSong);
-	// 	// var random = setCurrentSong(
-	// 	// 	id[Math.floor(Math.random() * id.length)]
-	// 	// );
-
-	// 	// // console.log(currentIndex);
-	// 	// const keys = id(sounds);
-	// 	// var random = keys[Math.floor(Math.random() * keys.length)];
-
-	// 	var random = sounds[Math.floor(Math.random() * sounds.length)];
-	// 	setCurrentSong(sounds[random]);
-	// 	console.log(random);
-	// };
+	const randomSong = () => {
+		var random = position => {
+			return Math.floor(Math.random() * position.length);
+		};
+		let randomPosition = random(soundsComponents);
+		setCurrentSong(sounds[randomPosition]);
+	};
 
 	const playPause = () => {
 		setPlaying(playing ? AUDIO.pause() : AUDIO.play());
@@ -123,10 +113,21 @@ const Home = () => {
 									<Col>
 										<button
 											onClick={() => {
-												// randomSong();
-												playPause();
+												randomSong();
 											}}>
-											<i className="fas fa-play-circle iconPlay"></i>
+											{active ? (
+												<i
+													className="fas fa-random iconRandom inactive"
+													onClick={() =>
+														handleChangeActive()
+													}></i>
+											) : (
+												<i
+													className="fas fa-play-circle iconPlay active"
+													onClick={() =>
+														handleChangeActive()
+													}></i>
+											)}
 										</button>
 									</Col>
 								</Row>
@@ -136,14 +137,15 @@ const Home = () => {
 					</Row>
 				</Container>
 			</div>
-			<audio
-				controls
-				autoPlay
-				src={"https://assets.breatheco.de/apis/sound/".concat(
-					currentSong.url
-				)}
-			/>
+
 			<div className="navbar">
+				<audio
+					controls
+					autoPlay
+					src={"https://assets.breatheco.de/apis/sound/".concat(
+						currentSong.url
+					)}
+				/>
 				<button
 					onClick={() => {
 						previousSong();
