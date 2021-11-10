@@ -115,19 +115,8 @@ const Home = () => {
 											onClick={() => {
 												randomSong();
 											}}>
-											{active ? (
-												<i
-													className="fas fa-random iconRandom inactive"
-													onClick={() =>
-														handleChangeActive()
-													}></i>
-											) : (
-												<i
-													className="fas fa-play-circle iconPlay active"
-													onClick={() =>
-														handleChangeActive()
-													}></i>
-											)}
+											<i className="fas fa-random iconRandom "></i>
+											<i className="fas fa-play-circle iconPlay"></i>
 										</button>
 									</Col>
 								</Row>
